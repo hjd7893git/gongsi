@@ -7,6 +7,8 @@ object h2 extends App {
   val a = Map("a" -> 1, "b" -> 2, "c" -> 3, "d" -> 4)
   a.filter(_._1 != "a").foreach(println _)
 
+  println(a.get("a"))   //取key时自动将与key名配对的值转化为Option类型
+
   val m1 = "v"
   m1 match {
     //      case x if x =="a" || x == "b" =>println("a or b")
@@ -102,4 +104,7 @@ object h2 extends App {
 println("------------")
   for (i<-0 until  1)
     println(i)
+
+  def a123 = (x:Int)=>x+1
+  print(a123(34))
 }
