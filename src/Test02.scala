@@ -8,11 +8,12 @@ object Test02 {
     var seq: Seq[A] = Seq.empty[A]
     seq = seq :+ A(1, "hello") :+ A(2, "asdsa") :+ A(23, "qwe") :+ A(23, "qwe") :+ A(0, "0")
     //   val fin =  seq.find((f:String)=>f.toString=="23")
-    println{distinct(seq)}
+    println {
+      distinct(seq)
+    }
     println(seq.distinct)
 
-    def distinct(praSeq: Seq[A]) =if (praSeq.nonEmpty) praSeq.map(f => f.a).distinct.flatten{f=>praSeq.find(pr=>pr.a==f)} else null
-
+    def distinct(praSeq: Seq[A]) = if (praSeq.nonEmpty) praSeq.map(f => f.a).distinct.flatten { f => praSeq.find(pr => pr.a == f) } else null
 
   }
 }

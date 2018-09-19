@@ -107,4 +107,10 @@ println("------------")
 
   def a123 = (x:Int)=>x+1
   print(a123(34))
+
+  println("-----数字补0转化为字符串-------")
+  println("%02d".format(2))
+  println(String.format("%02d",new Integer("2")))
+//  val pvk = "123";
+//  println(String.format("%04d", pvk.length))
 }
