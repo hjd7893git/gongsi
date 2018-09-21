@@ -1,3 +1,5 @@
+package actor
+
 import akka.actor._
 /**
   * 在ActorSystem层面，通过调用system.actorOf方法来创建actors；在actor内部，通过调用context.actorOf方法来创建子actor。

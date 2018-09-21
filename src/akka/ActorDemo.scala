@@ -1,5 +1,7 @@
-import akka.actor.Actor.Receive
-import akka.actor.{Actor, ActorRef, ActorSystem, Props}
+package akka
+
+import akka.actor.{Actor, ActorLogging, ActorRef, ActorSystem, Props}
+import akka.event.Logging
 
 /**
   * Created by Administrator on 2018/8/9.
@@ -23,11 +25,8 @@ object Demo extends App {
 
 
 
-object Example_01 extends App{
-  import akka.actor.Actor
-  import akka.event.Logging
-  import akka.actor.ActorSystem
-  import akka.actor.Props
+object Example_01 extends App {
+  import akka.actor.{Actor, ActorSystem, Props}
 
   class MyActor extends Actor {
     val log = Logging(context.system, this)

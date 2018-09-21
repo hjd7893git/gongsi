@@ -1,3 +1,5 @@
+package actor
+
 import akka.actor._
 
 case object PingMessage
