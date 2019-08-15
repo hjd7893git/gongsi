@@ -4,13 +4,14 @@
 object Test01  {
   def main(args: Array[String]): Unit ={
 
-    val colMaps = Map[String, String]("id" -> "id1","symbol" -> "symbol1")
+    var colMaps = Map[String, String]("id" -> "id1","symbol" -> "symbol1")
+    println(colMaps)
     val validCond = Map[String,String]("id" -> "id",  "name" -> "name", "nameEn" -> "name_en", "summary" -> "summary")
 //    val rawCond = colMaps.map((f: (String, String)) => validCond(f._1))
 //    println(rawCond)
-    println(colMaps.keySet -- validCond.keySet) //以前者为依据，移除相同的
-    println(colMaps.keySet | validCond.keySet)  //取出两者不同的
-    println(colMaps.keySet & validCond.keySet)  //取出两者相同的
+    println("--:"+(colMaps.keySet -- validCond.keySet)) //以前者为依据，移除相同的
+    println("|:"+(colMaps.keySet | validCond.keySet))  //取出两者不同的
+    println("&:"+(colMaps.keySet & validCond.keySet))  //取出两者相同的
 
 
     val as = List(1,2,3,4,5)

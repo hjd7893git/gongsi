@@ -57,12 +57,12 @@ object Example_08 extends App {
   val systemLog = system.log
 
   //创建FirstActor对象
-  val myactor = system.actorOf(Props[FirstActor], name = "firstActor")
+  val myactor = system.actorOf(Props[FirstActor], name = "firstActor") //先决条件，指定父子关系
   //获取ActorPath[构造]
   val myActorPath = system.child("firstActor")
   //通过system.actorSelection方法获取ActorRef
   val myActor1 = system.actorSelection(myActorPath)
-  systemLog.info("准备向myactor发送消息")
+  systemLog.info("准备向myactor发送消息:")
   //向myActor1发送消息
   myActor1 ! "test"
   myActor1 ! 123

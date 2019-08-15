@@ -16,12 +16,16 @@ object TreeMultisetTest extends App{
   println(t1.toString)
 
   val fqfqf = List(1,2,3).foldLeft(10)((sum,i)=>sum+i)
-  print(">>"+(0 /: List(1,2,3))(_+_))
-  print(fqfqf)
+  println(">>"+(0 /: List(1,2,3))(_+_))
+  println(fqfqf)
+  println("---------------------------")
 
   val map1 = Map("key1" -> 1, "key2" -> 3, "key3" -> 5)
   val map2 = Map("key2" -> 4, "key3" -> 6, "key5" -> 10)
+  println( map1 ++ map2)
   val mapAdd2 = (map1 /: map2)((map, kv) => {
+//    println(map)
+//    println(kv)
     map + (kv._1 -> (kv._2 + map.getOrElse(kv._1, 0)))
   })
   println(mapAdd2)

@@ -29,6 +29,7 @@ object Example_09 extends App {
     }
   }
 
+
   class MyActor extends Actor with ActorLogging {
     def receive = {
       case "test" => log.info("received test");
@@ -44,13 +45,13 @@ object Example_09 extends App {
   val firstactor = system.actorOf(Props[FirstActor], name = "firstActor")
 
   //获取ActorPath
-  val myActorPath = system.child("firstActor").child("myActor")
+//  val myActorPath = system.child("firstActor 可创建").child("myActor 可创建")
+  val myActorPath = system.child("firstActor").child("myActor")   //创建路径
   systemLog.info("firstActorPath--->{}", myActorPath)
 
 
   //通过system.actorSelection方法获取ActorRef
   val myActor1 = system.actorSelection(myActorPath)
-
   //直接指定其路径
   val myActor2 = system.actorSelection("/user/firstActor/myActor")
   //使用相对路径
@@ -59,8 +60,8 @@ object Example_09 extends App {
 
   systemLog.info("准备向myactor发送消息")
   //向myActor1发送消息
-  myActor1 ! "test"
-  myActor1 ! 123
+  myActor2 ! "test"
+  myActor3 ! 123
   Thread.sleep(5000)
   //关闭ActorSystem，停止程序的运行
   system.shutdown()
